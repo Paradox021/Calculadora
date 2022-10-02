@@ -16,16 +16,20 @@ botonesOperadores.forEach(boton => {
     boton.addEventListener('click', () => display.computar(boton.value))
 })
 
-function agregar(event){
-  if(op.indexOf(event.key) ===-1 && event.key!=='.' && isNaN(event.key)  ){
-    return;
-  }
-  if(op.indexOf(event.key)!==-1){
-    display.computar((operadores[event.key]))
-  }
-  if(!isNaN(event.key)|| event.key==='.'){
-    display.agregarNumero(event.key)
-  }
-}
 
-body.addEventListener('keypress', agregar)
+function agregar(event){
+    console.log(event.key)
+    if(event.key ==='Backspace')
+        display.borrar()
+    
+    if(event.key ==='Delete')
+        display.borrarTodo()
+    
+    if(op.indexOf(event.key)!==-1)
+        display.computar((operadores[event.key]))
+    
+    if(!isNaN(event.key)|| event.key==='.')
+        display.agregarNumero(event.key)
+  }
+
+body.addEventListener('keydown', agregar)
