@@ -17,7 +17,6 @@ botonesOperadores.forEach(boton => {
 })
 
 function agregar(event){
-    console.log(event.key)
   if(op.indexOf(event.key) ===-1 && event.key!=='.' && isNaN(event.key)  ){
     return;
   }
