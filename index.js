@@ -18,7 +18,6 @@ botonesOperadores.forEach(boton => {
 
 
 function agregar(event){
-    console.log(event.key)
     if(event.key ==='Backspace')
         display.borrar()
     
